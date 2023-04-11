@@ -30,7 +30,7 @@ class APIRequest {
   make(captchaKey = undefined, captchaRqtoken = undefined) {
     if (agent === null) {
       if (typeof this.client.options.proxy === 'string' && this.client.options.proxy.length > 0) {
-        const proxy = require('proxy-agent');
+        const proxy = require('https-proxy-agent');
         agent = new proxy(this.client.options.proxy);
       } else {
         agent = new https.Agent({ ...this.client.options.http.agent, keepAlive: true });

@@ -280,7 +280,7 @@ class WebSocketShard extends EventEmitter {
 
       let args = { handshakeTimeout: 30_000 };
       if (client.options.proxy.length > 0) {
-        const proxy = require('proxy-agent');
+        const proxy = require('https-proxy-agent');
         args.agent = new proxy(client.options.proxy);
         this.debug(`Using proxy ${client.options.proxy}`, args);
       }
